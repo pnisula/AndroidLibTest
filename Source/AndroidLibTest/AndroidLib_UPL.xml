@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--GearVR plugin additions-->
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+	<trace enable="true"/>
+	<init>
+		<log text="AndroidLib init"/>		
+	</init>
+
+  <resourceCopies>
+    <copyFile src="$S(EngineDir)/Source/ThirdParty/androidTest/repository/mylibrary-release.aar" dst="$S(BuildDir)/libs/mylibrary-release.aar" />
+    <copyFile src="$S(EngineDir)/Source/ThirdParty/androidTest/repository/mylibrary-release.jar" dst="$S(BuildDir)/libs/mylibrary-release.jar" />
+  </resourceCopies>
+  <!-- optional additions to proguard -->
+  <proguardAdditions>
+    <insert>
+      -keep class com.mycompany.** {
+      *;
+      }
+      -keep class android.app.** {
+      *;
+      }
+    </insert>
+  </proguardAdditions>
+
+</root>
